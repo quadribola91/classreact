@@ -1,0 +1,17 @@
+/* AboutMe.css */
+.about-me-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+.personal-info-section,
+.skills-section {
+  margin-bottom: 40px;
+}
+
+.download-cv {
+  margin-top: 20px;
+}
+
+/* Add additional styling as needed */

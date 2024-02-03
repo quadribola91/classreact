@@ -1,0 +1,106 @@
+/* src/components/Footer/Footer.css */
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 100%;
+  padding-top: 70px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Logo {
+  height: 40px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.Purpose {
+  max-width: 300px;
+  font-size: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  position: relative;
+  animation: slideShow 9s infinite;
+}
+
+.SocialMedia {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.SocialMedia a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.Copyright {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: aliceblue;
+}
+/* Add this to your Footer.css */
+
+.HoverableIcon {
+  position: relative;
+  display: inline-block;
+}
+
+.IconName {
+  position: absolute;
+  font-size: 12px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.HoverableIcon:hover .IconName {
+  opacity: 1;
+  font-size: 12px;
+}
+
+/* src/components/Footer/Footer.css */
+
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Additional styles for responsiveness */
+@media only screen and (max-width: 768px) {
+  .Content {
+    flex-direction: column;
+  }
+  .SocialMedia {
+    margin-top: 10px;
+  }
+}

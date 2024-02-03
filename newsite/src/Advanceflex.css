@@ -1,0 +1,9 @@
+.hexagon {
+  position: relative;
+  width: 300px; /* Adjust the size as needed */
+  height: 173.21px; /* 300 * tan(60deg / 2) */
+  background-color: #fff;
+  margin: 0 auto;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
+}
