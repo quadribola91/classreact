@@ -34,7 +34,7 @@ function Navbar2() {
 
   return (
     <header className={`bg-white ${isNavOpen ? "md:hidden" : ""}`} id="navbar">
-      <div className="bg-white container fixed top-0 z-50 overflow-hidden mt-0 mb-8 mx-auto top-0 flex items-center  justify-between p-1">
+      <div className="bg-white container fixed top-0 z-50 overflow-hidden mt-0 mb-12 mx-auto top-0 flex items-center  justify-between p-1">
         {/* Container for logo */}
         <div className="flex items-center">
           <img src={logo1} className="rounded-full h-12" alt="Logo" />

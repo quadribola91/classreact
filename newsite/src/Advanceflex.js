@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./Advanceflex.css";
 import H1 from "./pictures/Html1.png";
 import H2 from "./pictures/Html2.png";
@@ -20,36 +20,78 @@ const skillsData = [
 ];
 
 export default function SkillsCard() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [startX, setStartX] = useState(0);
+  const imageRef = useRef(null);
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const handleTouchStart = (e) => {
+    setStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    const x = e.touches[0].clientX;
+    if (startX - x > 50) {
+      // Swiped left
+      handleNext();
+    } else if (startX - x < -50) {
+      // Swiped right
+      handlePrev();
+    }
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === skillsData.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? skillsData.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">
-      <div
-        className="sm:flex sm:flex-wrap lg:flex lg:flex-wrap justify-center gap-6 bg-white p-6"
-        id="skills"
-      >
-        {skillsData.map((skill, index) => (
-          <div key={index} className="bg-300 mt-4 hexagon mb-6 lg:mr-6">
-            <a href="#" className="group block overflow-hidden">
-              <div className="relative h-[500px] sm:h-[450px]">
-                {/* Adjust the height value for the desired card height */}
-                <img
-                  src={skill.image1}
-                  alt=""
-                  className="absolute inset-0 h-100% w-100% object-cover opacity-100 group-hover:opacity-0 rounded-2xl justify-center"
-                />
-
-                <img
-                  src={skill.image2}
-                  alt=""
-                  className="absolute inset-0 h-100% w-100% object-cover opacity-0 group-hover:opacity-100 rounded-2xl justify-center"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold">{skill.name}</h3>
-                {/* Add additional information about the skill if needed */}
-              </div>
-            </a>
-          </div>
-        ))}
+      <div className="relative w-full max-w-3xl">
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+          ref={imageRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
+          {skillsData.map((skill, index) => (
+            <div
+              key={index}
+              className="w-full flex-shrink-0"
+              style={{ minWidth: "100%", maxWidth: "300px", height: "400px" }}
+            >
+              <img
+                src={currentIndex === index ? skill.image1 : skill.image2}
+                alt=""
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+          {skillsData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`h-2.5 w-2.5 rounded-full mx-1 focus:outline-none ${
+                currentIndex === index ? "bg-gray-800" : "bg-gray-400"
+              }`}
+            ></button>
+          ))}
+        </div>
       </div>
     </div>
   );

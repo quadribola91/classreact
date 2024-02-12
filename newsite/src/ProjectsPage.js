@@ -6,7 +6,7 @@ import Footer from "./Footer"; // Replace with the actual Footer component
 
 const ProjectsPage = () => {
   return (
-    <div>
+    <div id="projects">
       <div className="container mx-auto mt-12">
         <h1 className="text-3xl font-bold mb-6 mt-8 p-4">Live Projects</h1>
         <LifeProjects />

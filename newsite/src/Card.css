@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image {
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.image:hover + .image {
+  display: block;
+}
+
+.line {
+  position: absolute;
+  height: 100%;
+  width: 2px; /* Thickness of the border line */
+  background-color: black; /* Color of the border line */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}

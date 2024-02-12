@@ -7,5 +7,5 @@ export const blogs = {
    and user-friendly digital experiences to join your team or collaborate on exciting projects, let's connect!
              Master Neutral Intelligence Section`,
   prop: "About Me",
-  project: "Let's build the future together! 🚀",
+  project: "Let's build the Present-future together! 🚀",
 };

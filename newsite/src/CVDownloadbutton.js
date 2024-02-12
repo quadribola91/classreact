@@ -3,7 +3,8 @@ import React from "react";
 const CVDownloadButton = () => {
   const downloadCV = async () => {
     try {
-      const response = await fetch("../public/mycv.pdf"); // Update with the correct path relative to the public directory
+      // Update the fetch path using PUBLIC_URL
+      const response = await fetch(`${process.env.PUBLIC_URL}/newcv.pdf`);
 
       if (!response.ok) {
         console.error(
@@ -22,7 +23,9 @@ const CVDownloadButton = () => {
       // Create a temporary link element
       const link = document.createElement("a");
       link.href = url;
-      link.download = "../public/mycv.pdf"; // Update with the desired filename
+
+      // Update with the desired filename without the path
+      link.download = "newcv.pdf";
 
       // Append the link to the document and trigger a click event
       document.body.appendChild(link);

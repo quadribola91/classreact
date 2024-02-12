@@ -1,45 +1,33 @@
-/**personal */
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import Navbar2 from "./Navbar2";
-import Content from "./Content";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
-import About from "./About";
-import Contact from "./Contact";
-import Home from "./Home";
-import AboutMe from "./AboutMe";
-import ProjectsPage from "./ProjectsPage"; // Import ProjectsPage component
-import "./App.css";
+import Home from "./Home"; // Import your HomeLayout component here
+import Content from "./Content";
 import { blogs } from "./blog";
-import Advanceflex from "./Advanceflex";
-import { useState } from "react";
-
-// Layout component for the home page
-const HomeLayout = () => (
-  <>
-    <Home />
-  </>
-);
+import Card from "./Card"; // Import your Card component here
+import AboutMe from "./AboutMe";
+import SkillsCard from "./Advanceflex";
+import Articles from "./Articles";
+import Stories from "./Stories";
+import ProjectsPage from "./ProjectsPage";
+import Contact from "./Contact";
 
 export default function App() {
   return (
     <div>
       <Router>
-        <Navbar2 />
-
+        <Navbar />
         <Routes>
-          <Route path="/" element={<HomeLayout />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Content blog={blogs} />} />
-          <Route path="/AboutMe" element={<AboutMe />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/aboutMe" element={<AboutMe />} />
+          <Route path="/skills" element={<SkillsCard />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/stories" element={<Stories />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          {/* Add more routes as needed */}
-
-          <Route path="/advanceflex" element={<Advanceflex />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/card" element={<Card />} />
         </Routes>
         <Footer />
       </Router>

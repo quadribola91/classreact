@@ -3,8 +3,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import projectImage1 from "./pictures/TodoApp.png";
 import projectImage1Hover from "./pictures/TodoApp2.png";
-import projectImage2 from "./pictures/receipe1.jpg";
-import projectImage2Hover from "./pictures/receipe2.jpg";
+import projectImage2 from "./pictures/muchit3.webp";
+import projectImage2Hover from "./pictures/muchit5.jpg";
+import projectImage3 from "./pictures/Abis.jpg";
+import projectImage3Hover from "./pictures/Abis.jpg";
+import projectImage4 from "./pictures/weather1.png";
+import projectImage4Hover from "./pictures/weather2.jpeg";
+import projectImage5 from "./pictures/temp1.jpeg";
+import projectImage5Hover from "./pictures/temp2.png";
 
 const LifeProjects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -19,30 +25,30 @@ const LifeProjects = () => {
     },
     {
       id: 2,
+      title: "HighCloud Weather",
+      defaultImage: projectImage4,
+      hoverImage: projectImage4Hover,
+      link: "https://weather-p-xi.vercel.app/",
+    },
+    {
+      id: 3,
+      title: "Abis",
+      defaultImage: projectImage3,
+      hoverImage: projectImage3Hover,
+      link: "/project2",
+    },
+    {
+      id: 4,
       title: "Receipe",
       defaultImage: projectImage2,
       hoverImage: projectImage2Hover,
-      link: "/project2",
+      link: "/project4",
     },
     {
-      id: 2,
-      title: "Abis",
-      defaultImage: projectImage2,
-      hoverImage: projectImage2Hover,
-      link: "/project2",
-    },
-    {
-      id: 2,
-      title: "Weather App",
-      defaultImage: projectImage2,
-      hoverImage: projectImage2Hover,
-      link: "/project2",
-    },
-    {
-      id: 2,
+      id: 5,
       title: "Temperature Converter",
-      defaultImage: projectImage2,
-      hoverImage: projectImage2Hover,
+      defaultImage: projectImage5,
+      hoverImage: projectImage5Hover,
       link: "/project2",
     },
     // Add more projects as needed
