@@ -4,7 +4,7 @@ const CVDownloadButton = () => {
   const downloadCV = async () => {
     try {
       // Update the fetch path using PUBLIC_URL
-      const response = await fetch(`${process.env.PUBLIC_URL}/newcv.pdf`);
+      const response = await fetch(`${process.env.PUBLIC_URL}/Data001.pdf`);
 
       if (!response.ok) {
         console.error(
@@ -25,7 +25,7 @@ const CVDownloadButton = () => {
       link.href = url;
 
       // Update with the desired filename without the path
-      link.download = "newcv.pdf";
+      link.download = "Data001.pdf";
 
       // Append the link to the document and trigger a click event
       document.body.appendChild(link);

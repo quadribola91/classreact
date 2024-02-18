@@ -1,10 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import pic from "./ProfilePic.jpg";
 import AboutMe from "./AboutMe";
-import SkillsCard from "./Advanceflex";
-import Stories from "./Stories";
-import Articles from "./Articles";
-import ProjectsPage from "./ProjectsPage";
 import Contact from "./Contact";
 
 export default function Content({ blog }) {
@@ -12,12 +8,6 @@ export default function Content({ blog }) {
   const blogTitleRef = useRef(null);
   const projectRef = useRef(null);
   const contentRef = useRef(null);
-
-  const [theme, setTheme] = useState("light"); // Default theme is light
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
 
   useEffect(() => {
     const changeStyle = (elementRef) => {
@@ -90,75 +80,41 @@ export default function Content({ blog }) {
         `}
       </style>
 
-      <div
-        className={`bg-${
-          theme === "light" ? "white" : "black"
-        } p-6 md:p-8 rounded-lg mb-6`}
-        id="Home"
-      >
+      <div className={`p-6 md:p-8 rounded-lg mb-6`} id="Home">
         <div className="relative block overflow-hidden rounded-lg border border-gray-100 mt-8 p-4 lg:p-6 transition-transform hover:transform-hover hover:animate-background rounded-xl bg-gradient-to-r from-white-100 via-gray-400 to-white p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
-          {/* Toggle Button */}
-
           <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
           <div className="flex flex-col md:flex-col md:justify-between items-center md:items-center">
             <div className="mb-4 md:mb-0 text-center md:text-center">
               <p
                 ref={blogNameRef}
-                className={`mt-1 font-medium text-3xl md:text-6xl text-${
-                  theme === "light" ? "gray-600" : "gray-300"
-                } transition-colors hover:text-green-500`}
+                className={`mt-1 font-medium text-3xl md:text-6xl`}
               >
                 {blog.name}
               </p>
               <h3
                 ref={blogTitleRef}
-                className={`text-3xl md:text-4xl font-bold text-${
-                  theme === "light" ? "gray-900" : "gray-200"
-                } transition-colors hover:text-green-500`}
+                className={`text-3xl md:text-4xl font-bold`}
               >
                 {blog.title}
               </h3>
             </div>
-
-            <div className="md:ml-4 overflow-hidden">
-              <div className="border border-gray-300 rounded-lg shadow-md">
-                <img
-                  alt="Paul Clapton"
-                  src={pic}
-                  className="h-40 w-40 md:h-55 md:w-55 hover:h-70 hover:w-70 hover:md:h-80 hover:md:w-80 rounded-md object-cover shadow-sm transform-hover"
-                />
-              </div>
-            </div>
           </div>
 
           <div className="mt-4 mb-12 group border-s-4 border-gray-700 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
-            <p
-              ref={contentRef}
-              className={`text-lg text-${
-                theme === "light" ? "black" : "white"
-              } font-bold font-mono hover:font-serif hover:text-${
-                theme === "light" ? "gray-800" : "gray-400"
-              }`}
-            >
+            <p ref={contentRef} className={`text-lg font-bold font-mono`}>
               {blog.content}
             </p>
           </div>
           <div
             ref={projectRef}
-            className={`mt-15 mb-8 font-bold text-lg md:text-5xl text-${
-              theme === "light" ? "blue-500" : "blue-300"
-            } font-mono`}
+            className={`mt-15 mb-8 font-bold text-lg md:text-5xl font-mono`}
           >
             <p>{blog.project}</p>
           </div>
         </div>
       </div>
 
-      {/* ... rest of your code ... */}
       <AboutMe />
-      <SkillsCard />
-      <Articles />
-      <ProjectsPage />
       <Contact />
     </>
   );

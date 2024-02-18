@@ -12,7 +12,10 @@ import ProjectsPage from "./ProjectsPage";
 export default function Contact() {
   return (
     <>
-      <section className="bg-white-400 mt-4" id="contact">
+      <section
+        className="bg-white-400 mt-4 p-4 container mx-auto mt-12"
+        id="contact"
+      >
         <h2 className="text-black font-bold text-3xl  mt-20 hover:text-gray-800 hover:font-sans">
           Get In Touch
         </h2>

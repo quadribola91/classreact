@@ -2,7 +2,7 @@ export default function Articles() {
   return (
     <>
       <div className="space-y-4 p-4">
-        <h2 className="font-bold text-2xl text-mono text-center underline text-pink-900">
+        <h2 className="font-bold text-3xl text-mono text-center text-pink-900">
           Articles
         </h2>
         <details
@@ -10,7 +10,7 @@ export default function Articles() {
           open
         >
           <summary className="flex cursor-pointer items-center justify-between gap-1.5">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-bold text-2xl text-blue-900">
               VS Code remains the top code editor
             </h2>
 
@@ -30,7 +30,7 @@ export default function Articles() {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed font-bold text-pink-700">
             VS Code was released in 2019 and has grown to become one of the most
             popular code editors, rivaling IDEs like Vim, IntelliJ, and
             Webstorm. Data from Stack Overflow's 2023 survey shows that VS Code
@@ -42,7 +42,7 @@ export default function Articles() {
 
         <details className="group border-s-4 border-gray-300 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg text-2xl font-bold text-blue-900">
               The battle between SSR/SSG frameworks rages on
             </h2>
 
@@ -62,7 +62,7 @@ export default function Articles() {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed text-pink-700 font-bold">
             Server-side rendering (SSR) and static-site generation (SSG) are two
             rendering methods that have gained traction recently because of
             their SEO and performance benefits. As more developers and
@@ -75,7 +75,7 @@ export default function Articles() {
           open
         >
           <summary className="flex cursor-pointer items-center justify-between gap-1.5">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-bold text-2xl text-blue-900">
               The emergence of new styling solutions and component libraries
             </h2>
 
@@ -95,7 +95,7 @@ export default function Articles() {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed font-bold text-pink-700">
             When it comes to website styling options, developers are spoiled
             with multiple choices. There are over 40 CSS frameworks, over 40
             CSS-in-JS libraries, and numerous component libraries across
@@ -113,7 +113,7 @@ export default function Articles() {
           open
         >
           <summary className="flex cursor-pointer items-center justify-between gap-1.5">
-            <h2 className="text-lg font-medium text-gray-900">
+            <h2 className="text-lg font-bold text-2xl text-blue-900">
               React.js in 2024: Trends and Statistics for Frontend Developers
             </h2>
 
@@ -133,12 +133,10 @@ export default function Articles() {
             </span>
           </summary>
 
-          <p className="mt-4 leading-relaxed text-gray-700">
+          <p className="mt-4 leading-relaxed font-bold text-pink-700">
             React.js is an open-source JavaScript library used for building user
             interfaces, and it has become increasingly popular among frontend
-            developers in recent years. Here are some trends and statistics
-            which indicate why React.js is an essential tool for any frontend
-            developer's skillset.
+            developers in recent years.
           </p>
         </details>
       </div>

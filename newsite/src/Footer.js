@@ -7,7 +7,7 @@ import {
   FaGithub,
   FaWhatsapp,
 } from "react-icons/fa";
-import pic from "./pictures/highC.jpeg";
+import pic from "./ProfilePic.jpg";
 import "./Footer.css";
 
 function Footer() {
