@@ -17,6 +17,13 @@ const LifeProjects = () => {
 
   const projects = [
     {
+      id: 0,
+      title: "JobConnect",
+      defaultImage: projectImage1,
+      hoverImage: projectImage1Hover,
+      link: "https://jobconnect.vercel.app/", // Provide the full URL
+    },
+    {
       id: 1,
       title: "Todo App",
       defaultImage: projectImage1,
