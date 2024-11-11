@@ -7,7 +7,6 @@ import Content from "./Content";
 import { blogs } from "./blog";
 import AboutMe from "./AboutMe";
 import SkillsCard from "./Advanceflex";
-import Articles from "./Articles";
 import ProjectsPage from "./ProjectsPage";
 import Contact from "./Contact";
 
@@ -21,7 +20,6 @@ export default function App() {
           <Route path="/Home" element={<Content blog={blogs} />} />
           <Route path="/aboutMe" element={<AboutMe />} />
           <Route path="/skills" element={<SkillsCard />} />
-          <Route path="/articles" element={<Articles />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
